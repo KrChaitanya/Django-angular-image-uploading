@@ -1,0 +1,226 @@
+/* You can add global styles to this file, and also import other style files */
+.app-container {
+    min-height: 320px;
+    overflow: hidden;
+}
+
+.btn-delete-user {
+    width: 40px;
+    text-align: center;
+    box-sizing: content-box;
+}
+.card
+{
+    margin-top:20%;
+    margin-left: 20%;
+    background-color: rgba(0, 0, 0, 0.5);color: white;
+    width: 50%;
+}
+.btn-primary
+{
+    background-color:magenta;
+    border-color: white;
+}
+
+.btn-link
+{
+    color:white;
+}
+.card-header
+{
+    text-align:center;
+}
+  
+.upload-files-container {
+	background-color: rgba(0,0,0,0.5);
+	width: 50%;
+    margin-left: 25%;
+	padding: 30px 60px;
+	border-radius: 40px;
+	display: flex;
+   	align-items: center;
+   	justify-content: center;
+	flex-direction: column;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 10px 20px, rgba(0, 0, 0, 0.28) 0px 6px 6px;
+}
+.drag-file-area {
+	border: 2px dashed white;
+	border-radius: 40px;
+	margin: 10px 0 15px;
+	padding: 30px 50px;
+	width: 80%;
+	text-align: center;
+}
+.drag-file-area .upload-icon {
+	font-size: 50px;
+}
+.drag-file-area h3 {
+	font-size: 26px;
+	margin: 15px 0;
+}
+.drag-file-area label {
+	font-size: 19px;
+}
+.drag-file-area label .browse-files-text {
+	color: white;
+	font-weight: bolder;
+	cursor: pointer;
+}
+.browse-files span {
+	position: relative;
+	top: -25px;
+}
+.default-file-input {
+	opacity: 0;
+}
+.cannot-upload-message {
+	font-size: 17px;
+	display: flex;
+	align-items: center;
+	margin: 5px 0;
+	padding: 5px 10px 5px 30px;
+	border-radius: 5px;
+	color: #BB0000;
+	display: block;
+}
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+.cannot-upload-message span, .upload-button-icon {
+	padding-right: 10px;
+}
+.cannot-upload-message span:last-child {
+	padding-left: 20px;
+	cursor: pointer;
+}
+.file-block {
+	color: #f7fff7;
+	background-color: #7b2cbf;
+  	transition: all 1s;
+	width: 80%;
+	position: relative;
+	display: block;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin: 10px 0 15px;
+	padding: 10px 20px;
+	border-radius: 25px;
+	cursor: pointer;
+}
+.file-info {
+	display: flex;
+	align-items: center;
+	font-size: 15px;
+}
+.file-icon {
+	margin-right: 10px;
+}
+.file-name, .file-size {
+	padding: 0 3px;
+}
+.remove-file-icon {
+	cursor: pointer;
+}
+.progress-bar {
+	display: flex;
+	position: absolute;
+	bottom: 0;
+	left: 4.5%;
+	width: 0;
+	height: 5px;
+	border-radius: 25px;
+	background-color: #4BB543;
+}
+.upload-button {
+	font-family: 'Montserrat';
+	background-color: #7b2cbf;
+	color: #f7fff7;
+	display: flex;
+	align-items: center;
+	font-size: 18px;
+	border: none;
+	border-radius: 20px;
+	margin: 10px;
+	padding: 7.5px 50px;
+	cursor: pointer;
+}
+.imm-container {
+	max-width: 1280px;
+	min-width: 640px;
+	margin: 0 auto;
+
+  }
+.img-row {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+  }
+  .img-row .img-container {
+	width: 25%;
+	height: 25vw;
+	flex: 1 0 260px;
+	position: relative;
+	overflow: hidden;
+	border-style: solid;
+  border-color: black;
+  border-width: 1px;;
+  }
+ 
+  .img-row .img-container h2 {
+	position: absolute;
+	top: 10px;
+	left: 0;
+	width: 75%;
+	padding: 5px 10px;
+	background: rgba(255, 0, 0, 0.8);
+	color: rgba(252, 252, 252, 0.75);
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.5em;
+	font-weight: 600;
+  }
+  .img-row .img-container h4 {
+	position: absolute;
+	top: 200px;
+	width: 100%;
+	padding: 5px 10px;
+	background: rgba(0, 0, 255, 0.8);
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.2em;
+	font-weight: 400;
+	color: rgba(252, 252, 252, 0.75);
+	
+  }
+  .img-row .img-container img {
+	position: absolute;
+	top: -60px;
+	left: -60px;
+	width: 120%;
+	height: 120%;
+	z-index: -100;
+  }
+  .img-row .img-container .overlay {
+	display: table;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	left: -999px;
+	z-index: 0;
+	background: rgba(255, 0, 0, 0.4);
+	transition: all 0.3s ease;
+  }
+  .img-row .img-container .overlay a {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	
+	font-size: 2em;
+	font-weight: 600;
+	font-family: 'Open Sans', sans-serif;
+	color: rgba(252, 252, 252, 0.75);
+	text-decoration: none;
+  }
+  

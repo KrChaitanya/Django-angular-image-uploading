@@ -1,0 +1,50 @@
+﻿<div class="p-4">
+    <div class="container">
+        <h1 style="color:white;">Hi {{user?.first_name}}!</h1>
+        <p style="text-align:center;color:white;">Upload Your Images From Here and Scroll Down To See You Uploaded Images!</p>
+        <form class="form-container" enctype='multipart/form-data'>
+           
+            <div class="upload-files-container">
+                <label class="form-label" style="color:white;">Image Title*:</label>
+                <input type="text" class="form-control" placeholder="Add title" (change)="onTitleChange($event)">
+                <label class="form-label" style="color:white;">Image Description*:</label>
+                <textarea class="form-control" placeholder="Add description" (change)="onDescChange($event)"></textarea>
+                <label class="form-label" style="color:white;">Select Grid Position*:</label>
+                <select class="form-control" (change)="onGridChange($event)">
+                    <option *ngFor="let item of [].constructor(16); let i = index" value="{{i}}">{{i+1}}</option>
+                </select>
+                <div class="drag-file-area">
+                    <span class="material-icons-outlined upload-icon"  style="color:white;"> file_upload </span><br/>
+                    <h3 class="dynamic-message" style="color:white;"><input type="file" class="default-file-input"/> Upload any Image here </h3>
+                    <label class="label"> <span class="browse-files"  style="color:white;"> <input type="file" class="default-file-input" (change)="onFileInputChange($event)"/> <span class="browse-files-text">Click here to browse file</span>&nbsp;<span>from device</span> </span> </label>
+                </div>
+                <span class="cannot-upload-message" *ngIf="this.showFileError"> <span class="material-icons-outlined">error</span> Please select a valid Image <span class="material-icons-outlined cancel-alert-button">cancel</span> </span>
+                <div class="file-block" *ngIf="this.fileName!=''">
+                    <div class="file-info"> <span class="material-icons-outlined file-icon">description</span> <span class="file-name">{{fileName}} </span> | <span class="file-size"> {{fileSize}} </span> </div>
+                    <span class="material-icons remove-file-icon" (click)="removeSelectedFile()">delete</span>
+                    <div class="progress-bar"> </div>
+                </div>
+                <button type="button" class="upload-button" (click)="uploadFile()"> Upload </button>
+            </div>
+        </form>
+        <br />
+        <hr  />
+        <br />
+        <h2 style="text-align:center;color:black;">Your Uploaded Images!</h2>
+        <div class="imm-container">
+        <div class="img-row">
+            
+            <div class="img-container" *ngFor="let image of Images;let i=index; " (click)="imageClick(image.grid_position||'')">
+              <h2 *ngIf="image.title">{{image.title}}</h2>
+              <h2 *ngIf="!image.title">Not Uploaded</h2>
+
+              <h4 *ngIf="image.id&&image.grid_position==clickedImage"><span class="material-icons remove-file-icon" (click)="removeImage(i.toString())">delete</span><br />{{image.description}}</h4>
+              <img *ngIf="image.id" src="{{apiUrl}}/users/{{user?.id}}/images/{{image.grid_position}}/" alt="{{image.title}}" />
+              
+              <img *ngIf="!image.id" src="https://www.slntechnologies.com/wp-content/uploads/2017/08/ef3-placeholder-image.jpg" alt="placeholder" />
+            </div>
+            
+          </div>
+          </div>
+    </div>
+</div>
